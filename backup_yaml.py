@@ -130,7 +130,6 @@ def run_backup(device):
 		log.info("Backup path located on: {0}".format(directory))
 	for device in devices:
 		if device['device_type'] == "brocade_fastiron":
-
 			try:
 				log.info("Attempting to connect to switch IP: {0} ".format(device['ip']))
 				net_connect = ConnectHandler(**device)
