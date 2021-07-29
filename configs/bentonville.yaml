@@ -1,0 +1,16 @@
+--- 
+
+site: "Bentonville"
+enable_backup: True
+
+DeviceList: 
+  Firewall_List: 
+    FF-HA-Cluster: 
+      device_type: fortinet
+      ip: "10.7.1.1"
+
+  Switch_List: 
+    ACME-RM-6610-CORE: 
+      device_type: brocade_fastiron
+      ip: "10.3.255.1"
+      

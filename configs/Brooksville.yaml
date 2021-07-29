@@ -1,0 +1,19 @@
+--- 
+site: Brooksville
+enable_backup: True
+
+DeviceList: 
+
+  Switch_List: 
+    SHELTON-CORE-STACK#: 
+      device_type: brocade_fastiron
+      ip: "10.1.2.1"
+    FF-MDF-USER-STACK: 
+      device_type: brocade_fastiron
+      ip: "10.1.16.1"
+    
+
+  Firewall_List: 
+    FF-HA-Cluster: 
+      device_type: fortinet
+      ip: "10.9.100.254"

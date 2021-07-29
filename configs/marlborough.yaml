@@ -1,0 +1,18 @@
+--- 
+
+site: "Marlborough"
+enable_backup: True
+
+DeviceList: 
+  Firewall_List: 
+    FF-HA-Cluster: 
+      device_type: fortinet
+      ip: "192.168.75.1"
+
+  Switch_List: 
+    ACME-RM-6610-CORE: 
+      device_type: brocade_fastiron
+      ip: "10.4.40.2"
+    ACME-RM-MDF-6450: 
+      device_type: brocade_fastiron
+      ip: "10.4.40.3"

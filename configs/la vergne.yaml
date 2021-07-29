@@ -1,0 +1,43 @@
+--- 
+
+site: "La Vergne"
+enable_backup: True
+
+DeviceList: 
+  Firewall_List: 
+    FF-HA-Cluster: 
+      device_type: fortinet
+      ip: "10.8.255.2"
+
+  Switch_List: 
+    ACME-RM-6610-CORE: 
+      device_type: brocade_fastiron
+      ip: "10.3.255.1"
+    ACME-RM-MDF-6450: 
+      device_type: brocade_fastiron
+      ip: "10.3.255.18"
+    ACME-RM-IDF-1-B: 
+      device_type: brocade_fastiron
+      ip: "10.3.255.2"
+    ACME-RM-IDF-2-C: 
+      device_type: brocade_fastirson
+      ip: "10.3.255.6"
+    ACME-RM-IDF-3-D: 
+      device_type: brocade_fastiron
+      ip: "10.3.254.5"
+    ACME-RM-IDF-4-E: 
+      device_type: brocade_fastiron
+      ip: "10.3.255.14"
+    ACME-RM-IDF-5-F: 
+      device_type: brocade_fastiron
+      ip: "10.3.254.6"
+    ACME-RM-IDF-6-G: 
+      device_type: brocade_fastiron
+      ip: "10.3.254.10"
+    ACME-RM-IDF-7-H: 
+      device_type: brocade_fastiron
+      ip: "10.3.254.18"
+    ACME-RM-IDF-8-I:
+      device_type: brocade_fastiron
+      ip: "192.168.0.254"
+      
