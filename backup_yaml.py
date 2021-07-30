@@ -1,9 +1,13 @@
 
 # module name: pyaml
-# module name: netmiko
+# module name: netmiko,futures
+
+
+
 import os
 import subprocess
 import yaml 
+import concurrent
 from netmiko import ConnectHandler
 from datetime import date
 import logging.config
@@ -84,7 +88,7 @@ def get_devices(creds,config_file):
 	cfg = config_file
 	site = cfg['site']
 	try:
-		#Check ifbackup flag is true on yaml file, if false skip
+		#Check if backup flag is true on yaml file, skip if fals or doesn't exist
 		backup = cfg['enable_backup'] 
 		if backup:
 			log.info("Started backup process for site: {0}".format(cfg['site']))
@@ -188,22 +192,33 @@ def run_backup(device):
 	return directory
 
 
-		
-# Script starting point. 
+def TestPrint(devices):
+	print(devices)
 
-if __name__ == '__main__':
+
+def main():
 	setup_logging()
 	config_files = get_configfile()
 	creds = get_credential()
 	for config_file in config_files:
 		device_yaml = config_file[0:-5]
 		devices_and_site = get_devices(creds,read_configfile(config_file))
-		directory = run_backup(devices_and_site)
+		run_backup(devices_and_site)
+		#executor = concurrent.futures.ThreadPoolExecutor(10)
+		#futures = [executor.submit(run_backup, devices_and_site) for device in devices_and_site]
+		#concurrent.futures.wait(futures)
+	'''
 	try:
 		print(directory)			
 		subprocess.Popen(r'explorer /select,"{0}"'.format(directory))
 	except Exception as e:
 		log.error(e)
+	'''	
+
+# Script starting point. 
+if __name__ == '__main__':
+	main()
+
 
 
 
