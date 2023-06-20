@@ -3,23 +3,16 @@ site: Orangeville
 enable_backup: True
 
 DeviceList: 
+  Firewall_List: 
+    ACME-OV-FGT: 
+      device_type: fortinet
+      ip: "10.19.10.254"
+
+    ACME-MF-FGT101F: 
+      device_type: fortinet
+      ip: "10.19.138.254"
 
   Switch_List: 
-    SHELTON-CORE-STACK#: 
+    ACME_CANADA_ICX: 
       device_type: brocade_fastiron
-      ip: "10.1.2.1"
-    FF-MDF-USER-STACK: 
-      device_type: brocade_fastiron
-      ip: "10.1.16.1"
-    ACME-HA-SWITCH: 
-      device_type: brocade_fastiron
-      ip: "10.1.2.4"
-    FAIRFIELD-MPLS: 
-      device_type: cisco_ios
-      ip: "10.1.255.2"
-    
-
-  Firewall_List: 
-    FF-HA-Cluster: 
-      device_type: fortinet
-      ip: "172.16.1.2"
+      ip: "10.19.10.1"    

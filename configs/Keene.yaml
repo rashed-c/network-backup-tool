@@ -1,20 +1,22 @@
 --- 
 
-site: "La Vergne"
+site: "Keene"
 enable_backup: True
 
 DeviceList: 
   Firewall_List: 
-    Fortigate 100E: 
+    FF-HA-Cluster: 
       device_type: fortinet
-      ip: "10.8.255.2"
+      ip: "10.10.100.254"
 
   Switch_List: 
-    ACME-SMYRNA-MDF: 
+    KN-SERVER-SWITCH: 
       device_type: brocade_fastiron
-      ip: "10.8.2.1"
-    ACME-SMYRNA-IDF: 
+      ip: "10.10.112.1"
+
+    ACME-KN-WAREHOUSE: 
       device_type: brocade_fastiron
-      ip: "10.8.2.2"
-    
+      ip: "10.10.112.2"
+  
+  
       

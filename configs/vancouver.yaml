@@ -4,12 +4,31 @@ site: "Vancouver"
 enable_backup: True
 
 DeviceList: 
+  
+  Switch_List: 
+    ACME-MDF-SERVER_ROOM: 
+      device_type: brocade_fastiron
+      ip: "10.5.12.1"
+  
+    FAO-IDF-PRODUCTION: 
+        device_type: hp_procurve
+        ip: "10.5.12.16"
+
+    FAO-IDF-DOWNSTAIRS: 
+        device_type: brocade_fastiron
+        ip: "10.5.12.2"
+
+    FAO-WAREHOUSE: 
+        device_type: brocade_fastiron
+        ip: "10.5.12.3"
+
+    ACME-FAO-WAN: 
+        device_type: brocade_fastiron
+        ip: "10.5.12.4"
+
   Firewall_List: 
     FF-HA-Cluster: 
       device_type: fortinet
       ip: "10.5.254.1"
 
-  Switch_List: 
-    ACME-RM-6610-CORE: 
-      device_type: brocade_fastiron
-      ip: "10.3.255.1"
+

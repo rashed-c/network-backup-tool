@@ -1,15 +1,15 @@
 --- 
 
-site: "Santa Ana"
+site: "Guangzhou"
 enable_backup: True
 
 DeviceList: 
   Firewall_List: 
-    Fortigate 100E: 
+    ACME_GZ_100D: 
       device_type: fortinet
-      ip: "192.168.123.254"
+      ip: "192.168.1.99"
 
   Switch_List: 
-    Brocade FCX624S: 
+    ACME_GZ_CORE: 
       device_type: brocade_fastiron
-      ip: "192.168.123.1"
+      ip: "192.168.196.2"

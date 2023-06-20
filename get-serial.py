@@ -145,7 +145,7 @@ def run_backup(device):
 				log.info("Started config backup for Brocade device: {0} ".format(device['ip']))
 				net_connect.enable()
 				time.sleep(3)
-				text_file.write(net_connect.send_command("show run"))
+				text_file.write(net_connect.send_command("show version | i Serial"))
 				text_file.close()
 				log.info("Device: {0}, backed up as {1}".format(device['ip'], text_file.name))
 
@@ -165,7 +165,7 @@ def run_backup(device):
 				log.info("Started config backup for Cisco device: {0} ".format(device['ip']))
 				net_connect.enable()
 				time.sleep(1)
-				text_file.write(net_connect.send_command("show run"))
+				text_file.write(net_connect.send_command("show version | i Serial"))
 				text_file.close()
 				log.info("Device: {0}, backed up as {1}".format(device['ip'], text_file.name))
 
@@ -184,7 +184,7 @@ def run_backup(device):
 				log.info("Started config backup for HP device: {0} ".format(device['ip']))
 				net_connect.enable()
 				time.sleep(1)
-				text_file.write(net_connect.send_command("show run"))
+				text_file.write(net_connect.send_command("show version | i Serial"))
 				text_file.close()
 				log.info("Device: {0}, backed up as {1}".format(device['ip'], text_file.name))
 
@@ -194,6 +194,7 @@ def run_backup(device):
 		
 
 		elif device['device_type'] == "fortinet":
+			pass
 			try: 
 				log.info("Attempting to connect to firewall IP: {0} ".format(device['ip']))
 				net_connect = ConnectHandler(**device)
@@ -213,8 +214,6 @@ def run_backup(device):
 	return directory
 
 
-def TestPrint(devices):
-	print(devices)
 
 
 def main():

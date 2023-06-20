@@ -1,16 +1,16 @@
 --- 
 
-site: "Rocky Mount"
-enable_backup: True
+site: "Santa Ana"
+enable_backup: False
 
 DeviceList: 
   Firewall_List: 
     FF-HA-Cluster: 
       device_type: fortinet
-      ip: "192.168.0.1"
+      ip: "192.168.123.254"
 
   Switch_List: 
-    ACME-RM-6610-MDF: 
+    ACME-RM-6610-CORE: 
       device_type: brocade_fastiron
       ip: "10.3.255.1"
     ACME-RM-MDF-6450: 
@@ -20,7 +20,7 @@ DeviceList:
       device_type: brocade_fastiron
       ip: "10.3.255.2"
     ACME-RM-IDF-2-C: 
-      device_type: brocade_fastiron
+      device_type: brocade_fastirson
       ip: "10.3.255.6"
     ACME-RM-IDF-3-D: 
       device_type: brocade_fastiron
@@ -40,6 +40,4 @@ DeviceList:
     ACME-RM-IDF-8-I:
       device_type: brocade_fastiron
       ip: "192.168.0.254"
-    DATASCOPE_SWITCH:
-      device_type: brocade_fastiron
-      ip: "10.3.4.2"
+      
